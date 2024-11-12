@@ -1,18 +1,20 @@
 var selectField = document.getElementById('selectField');
-var scelectBank = document.getElementById('scelectBank');
+var selectBank = document.getElementById('selectBank');
 var banklist = document.getElementById('banklist');
-var banks = document.getElementsByClassName('banks');
+var banks = document.querySelectorAll('.banks');
+var arrow = document.getElementById('arrow');
 
 
-// event listener
-banklist.addEventListener('onclick', enterField);
+banks.forEach(function(bank) {
+    bank.onclick = function() {
+        selectBank.innerHTML = this.textContent;
+        banklist.classList.toggle('hide');
+        arrow.classList.toggle('rotate');
+    };
+});
 
-function enterField(e){
-    e.preventDefault();
+selectField.onclick = function() {
+    banklist.classList.toggle('hide');
 
-    if(e.target.classList.contains('banks')){
-    console.log('hello');
-
-    }
-
+    arrow.classList.toggle('rotate');
 }

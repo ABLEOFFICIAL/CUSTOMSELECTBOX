@@ -52,6 +52,10 @@ img{
     scrollbar-width: none;
 }
 
+#selectField img {
+    transition: transform 0.3s;
+}
+
 li {
     list-style: none;
     position: relative;
@@ -67,4 +71,12 @@ li:hover {
 .bankLogo {
     position: absolute;
     left: 0;
+}
+
+.hide {
+    visibility: hidden;
+}
+
+.rotate {
+    transform: rotate(180deg);
 }
